@@ -5,7 +5,7 @@
 
 | 순번 | 주차                          | 내용                | 문제집    | 총 문제 수 |  공통 문제 |  상태             |
 | :--: | :--------------------------: | :-----------------: | :------:  | :------: | :------: |:---------------:|
-| 01 | 1주차 (7월 10일) | 자료구조 | [바로가기]([./algorithms/data_structure](https://github.com/likelion-ssu/2025_Algorithm_Study/tree/main/week1)) | 16 |18258 / 10828 / 10866 | [![status](https://img.shields.io/badge/Started-112051)](https://img.shields.io/badge/Started%20-00900) |
+| 01 | 1주차 (7월 10일) | 자료구조 | [바로가기](week1) | 16 |18258 / 10828 / 10866 | [![status](https://img.shields.io/badge/Started-112051)](https://img.shields.io/badge/Started%20-00900) |
 
 ### 폴더링 규칙
 - weekN 폴더 내에서 자신의 '영문 이름' 폴더를 생성한 후 문제를 기록하면 됩니다.
