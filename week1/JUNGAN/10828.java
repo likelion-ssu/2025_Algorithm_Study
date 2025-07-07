@@ -3,8 +3,8 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        IntStack stake = new IntStack(10000);
         int N = sc.nextInt();
+        IntStack stake = new IntStack(N);
 
         for (int i = 0; i < N; i++) {
             String s = sc.next();
@@ -19,8 +19,9 @@ public class Main {
                     System.out.println(stake.size());
                     break;
                 case "empty":
-                    if (stake.isEmpty()) System.out.println("1");
-                    else System.out.println("0");
+//                    if (stake.isEmpty()) System.out.println("1");
+//                    else System.out.println("0");
+                    System.out.println(stake.isEmpty()? "1" : "0");
                     break;
                 case "top":
                     System.out.println(stake.top());
