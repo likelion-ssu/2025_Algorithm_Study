@@ -6,7 +6,7 @@ using namespace std;
 
 int N;
 string expr;
-int answer = 0;
+int answer = -1111111111;
 
 // 연산 함수 분리
 int calculate(int a, int b, char op) {
@@ -50,6 +50,7 @@ int main() {
     cin >> N >> expr; // expr로 수식 전체 받음
 
     dfs(0, 0); // index = 0, 누적합 = 0
+    cout << answer << '\n';
 
     return 0;
 }
