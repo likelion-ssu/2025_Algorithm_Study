@@ -3,7 +3,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class num_16439 {
+public class 16439 {
     static int max = 0;
     static int N;
     static int M;

@@ -3,7 +3,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class num_14620{
+public class 14620 {
     static int min = Integer.MAX_VALUE;
     static int [][] prices;
     static boolean[][] visited;
