@@ -6,7 +6,7 @@ public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int N = Integer.parseInt(br.readLine());
-        IntQueue que = new IntQueue(2000000);
+        IntQueue que = new IntQueue(N);
 
         StringBuilder builder = new StringBuilder();
 
@@ -51,8 +51,10 @@ class IntQueue {
 
     void push(int x) {
         size++;
-        que[rear++] = x;
-        if (rear == capacity) rear = 0;
+//        que[rear++] = x;
+//        if (rear == capacity) rear = 0;
+        que[rear] = x;
+        rear = (rear + 1) % capacity;
     }
 
     int pop() {
