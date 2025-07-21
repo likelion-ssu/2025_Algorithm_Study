@@ -43,7 +43,7 @@ public class A16637 {
         int next = calc(result, num.get(idx + 1), op.get(idx));
         dfs(next, idx + 1);
 
-        // 2) 괄호 O
+        // 괄호 O
         if (idx + 1 < op.size()) {
             int inside = calc(num.get(idx + 1), num.get(idx + 2), op.get(idx + 1));
             int combined = calc(result, inside, op.get(idx));
