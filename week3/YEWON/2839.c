@@ -2,7 +2,7 @@
 
 int main() {
     int N, result;
-    scanf("%d", N);
+    scanf("%d", &N);
 
     while(N > 0) {
         if(N % 5 == 0) {
@@ -13,9 +13,8 @@ int main() {
             N -= 3;
         }
     }
-    if (N != 0 || result == 0) {
-        printf("-1/n");
-    } else {
-        printf("%d", result);
-    }
+    if (N != 0 || result == 0) printf("-1/n");
+    else printf("%d", result);
+    
+    return 0;
 }
