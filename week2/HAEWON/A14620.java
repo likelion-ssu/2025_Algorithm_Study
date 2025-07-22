@@ -51,9 +51,9 @@ public class A14620 {
         }
     }
 
-    static boolean check(Point[] flowers){
+    static boolean check(Point[] selected){
         boolean[][] isVisited = new boolean[n][n];
-        for(Point p : flowers){
+        for(Point p : selected){
             for(int d=0; d<5; d++){
                 int nx = p.x + dx[d];
                 int ny = p.y + dy[d];
@@ -64,9 +64,9 @@ public class A14620 {
         return true;
     }
 
-    static int getCost(Point[] flowers){
+    static int getCost(Point[] selected){
         int sum = 0;
-        for(Point p : flowers){
+        for(Point p : selected){
             for(int d=0; d<5; d++){
                 sum += cost[p.x + dx[d]][p.y + dy[d]];
             }
