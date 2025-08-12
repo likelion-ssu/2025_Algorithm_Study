@@ -1,27 +1,44 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+int n, k;
+int sensor[10100];
+int dis_sensor[10100];
+
+bool compare(int a, int b) {
+    return a > b;
+}
+
 int main() {
-    int N, K;
-    cin >> N >> K;
+    ios::sync_with_stdio(false);
+    cin.tie(NULL);
 
-    vector<int> sensors(N);
-    for (int i = 0; i < N; ++i) cin >> sensors[i];
+    cin >> n >> k;
 
-    if (K >= N) {
-        cout << 0 << "\n"; // 센서보다 집중국이 많으면 거리합은 0
-        return 0;
+    for(int i = 0; i < n; i++) {
+        cin >> sensor[i];
     }
 
-    sort(sensors.begin(), sensors.end());
+    sort(sensor, sensor + n);
 
-    vector<int> diffs;
-    for (int i = 1; i < N; ++i)
-        diffs.push_back(sensors[i] - sensors[i - 1]); // 인접 거리
+    for(int i = 0; i < n - 1; i++) {
+        dis_sensor[i] = sensor[i + 1] - sensor[i];
+    }
 
-    sort(diffs.rbegin(), diffs.rend()); // 내림차순 정렬
+    sort(dis_sensor, dis_sensor + n - 1, compare);
 
-    int result = accumulate(diffs.begin() + K - 1, diffs.end(), 0); // K-1개 제거 후 합산
-    cout << result << "\n";
+    for(int i = 0; i < k - 1; i++) {
+        dis_sensor[i] = 0;
+    }
+
+    int res = 0;
+
+    for(int i = 0; i < n - 1; i++) {
+        res += dis_sensor[i];
+    }
+
+    cout << res << "\n";
+
+
     return 0;
 }

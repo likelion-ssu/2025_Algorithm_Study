@@ -2,32 +2,40 @@
 using namespace std;
 
 int main() {
-    ios::sync_with_stdio(false); cin.tie(nullptr);
+    ios::sync_with_stdio(false);
+    cin.tie(NULL);
 
-    int T;
-    cin >> T; // 테스트 케이스 개수
+    int test_case;
+    int file_num;
 
-    while (T--) {
-        int K;
-        cin >> K;
 
-        priority_queue<long long, vector<long long>, greater<>> pq;
+    cin >> test_case;
 
-        for (int i = 0; i < K; ++i) {
-            long long size;
-            cin >> size;
-            pq.push(size); // 파일 크기 입력
+    for(int i = 0; i < test_case; i++) {
+        cin >> file_num;
+
+        long long res = 0;
+        priority_queue<long long, vector<long long>, greater<long long>> pq;
+
+
+        for(int i = 0; i < file_num; i++) {
+            long long tmp;
+            cin >> tmp;
+            pq.push(tmp);
         }
 
-        long long total = 0;
-        while (pq.size() > 1) {
-            long long a = pq.top(); pq.pop();
-            long long b = pq.top(); pq.pop();
-            total += a + b;
-            pq.push(a + b); // 합친 결과를 다시 큐에
+        while(pq.size() > 1) {
+            long long a, b;
+            a = pq.top();
+            pq.pop();
+            b = pq.top();
+            pq.pop();
+
+            res += a + b;
+            pq.push(a + b);
         }
 
-        cout << total << "\n";
+        cout << res << "\n";
     }
 
     return 0;
